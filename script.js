@@ -49,4 +49,33 @@ $("#currentDay").text(today);
      $(".container").append(row);
     });
 
-    
+    // Colour rows based on current time 
+    function colourRow(time) {
+        var planNow = moment(now, "H A");
+        var planEntry = moment(time, "H A");
+        if (planNow.isBefore(planEntry) === true) {
+                     return "future";
+         } else if (planNow.isAfter(planEntry) === true) {
+        return "past";
+        } else {
+        return "present";
+         }
+    }
+
+    // To save Events 
+        $(".saveBtn").on("click", function() {
+	    var blockID = parseInt(
+	    $(this)
+			.closest(".time-block")
+			.attr("id") 	);
+	    var userEntry = $.trim(
+	    $(this)
+			.parent()
+ 			.siblings("textarea")
+			.val()
+	);
+     	planforWorkday[blockID].event = userEntry;
+
+    // 	Setting local storage 
+	localStorage.setItem("workDay", JSON.stringify(planforWorkday));
+    });
