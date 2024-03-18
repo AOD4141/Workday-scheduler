@@ -8,7 +8,7 @@ var now = moment().format('H A');
 $("#currentDay").text(today);
 
 
-// /* planforWorkday entries for one hour of the workday */
+//  planforWorkday entries for one hour of the workday 
  var planforWorkday = [
     { time: "9 AM", event: "" },
   { time: "10 AM", event: "" },
@@ -21,3 +21,10 @@ $("#currentDay").text(today);
     { time: "5 PM", event: "" },
 	   { time: "6 PM", event: "" },
       ];
+
+
+      // set local storage  
+    var workEvents = JSON.parse(localStorage.getItem("workDay"));
+    if (workEvents) {
+    planforWorkday = workEvents;
+    }
