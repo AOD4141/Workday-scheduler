@@ -13,14 +13,14 @@ body {
     padding: 10px;
   }
   
-  header {
+  .heading-container {
     text-align: center;
     background-color: transparent;
-    color: black;
+    color: rgb(105, 105, 105);
     border-radius: 0;
     border-bottom: 10px solid black;
-    padding: 60px;
   }
+  
   
   .description {
     white-space: pre-wrap;

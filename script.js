@@ -79,3 +79,5 @@ $("#currentDay").text(today);
     // 	Setting local storage 
 	localStorage.setItem("workDay", JSON.stringify(planforWorkday));
     });
+
+    
